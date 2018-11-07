@@ -1,1 +1,1 @@
-# Tweet Geneterator
+# Tweet Generator
