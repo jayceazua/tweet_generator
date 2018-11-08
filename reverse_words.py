@@ -1,3 +1,5 @@
+import sys
+
 original_words = quotes = "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me."
 
 # turn the above into a reusable func
