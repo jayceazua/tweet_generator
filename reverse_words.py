@@ -22,4 +22,4 @@ def reverse_words_quote(input_words):
 if __name__ == "__main__":
 	# this calls the function made above
 	quote = reverse_words_quote(original_words)
-	print quote
+	print(quote)
