@@ -1,3 +1,11 @@
+"""
+Improvements:
+        - If i input 'tree' it duplicates the possbilities for one more iteration.
+        - Need to create a good error handling for dubplicates and not be able to append it,
+            into the return list of possible words.
+"""
+
+
 def anagram(word):
    if len(word) <= 1:
        return word
@@ -9,7 +17,7 @@ def anagram(word):
        return possible_words
 
 def main():
-    word = "war"
+    word = "tree"
     print(anagram(word))
 
 if __name__ == "__main__":
