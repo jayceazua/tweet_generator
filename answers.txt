@@ -14,7 +14,7 @@ Answer: Yes they are. Slowly but it is getting there. I am trying to optimize th
 Answer: Yes they are. Slowly but it is getting there.
 
 6. Can files be used as both modules and as scripts?
-Answer: I hope so. I am cleaning up my codes.
+Answer: Yes they can; via. the "if __name__ == '__main__:'"
 
 7. Do modules all depend on each other or can they be used independently?
 Answer: I guess these modules depend on each other
