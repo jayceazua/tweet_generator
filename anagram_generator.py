@@ -1,11 +1,11 @@
-def all_perms(elements):
-   if len(elements) <= 1:
-       return elements
+def all_perms(word):
+   if len(word) <= 1:
+       return word
    else:
        possible_words = []
-       for perm in all_perms(elements[1:]): # using the power of recursion
-           for i in range(len(elements)): # loop obvs lol
-               possible_words.append(perm[:i] + elements[0:1] + perm[i:])
+       for perm in all_perms(word[1:]): # using the power of recursion
+           for i in range(len(word)): # loop obvs lol
+               possible_words.append(perm[:i] + word[0:1] + perm[i:])
        return possible_words
 
 def main():
