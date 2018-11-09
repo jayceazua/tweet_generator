@@ -44,6 +44,5 @@ def random_words_arrange(input_int, list_words):
 
 if __name__ == "__main__":
     list_words = get_words()
-    # print(list_words)
     input_int = int(sys.argv[1])
     print(random_words_arrange(input_int, list_words))
