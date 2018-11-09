@@ -32,7 +32,7 @@ def random_words_arrange(input_int, list_words):
 		# the condition is when
 	while input_int != 0:
 		# generates a random number based on the length of the file
-		rand_num = random.randint(0, len_file -1)
+		rand_num = random.randint(0, len_file)
 		# it will add the random selected word into our empty list
 		words_list.append(list_words[rand_num] + " ")
 		# prevents from getting the same word
