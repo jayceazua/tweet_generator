@@ -42,7 +42,10 @@ def random_words_arrange(input_int, list_words):
 
 	return sentence.join(words_list)
 
-if __name__ == "__main__":
+def main():
     list_words = get_words()
     input_int = int(sys.argv[1])
     print(random_words_arrange(input_int, list_words))
+
+if __name__ == "__main__":
+    main()
