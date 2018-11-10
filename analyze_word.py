@@ -3,7 +3,13 @@ def get_words(source_text):
     return words
 
 # As a list of lists:
+def list_histogram(source_text):
+    pass
+
 # As a list of tuples:
+def tup_histogram(source_text):
+    pass
+
 # As a dictionary of key-value pairs:
 def dic_histogram(source_text):
     """ return a histogram data structure that stores each unique word
@@ -17,17 +23,18 @@ def dic_histogram(source_text):
             histogram[word] = 1
     return histogram
 
+# As a count histogram:
+def count_histogram(source_text):
+    pass
+
 def unique_words(histogram):
     """ returns the total count of unique words in the histogram """
-    pass
+    return len(histogram)
 
 def frequency(word, histogram):
     """ returns the number of times that word appears in a text. """
     pass
 
-
-# 1. What is the least/most frequent word(s)?
-# 3. What is the average (mean/median/mode) frequency of words in the text?
 
 # run the code
 if __name__ == "__main__":
