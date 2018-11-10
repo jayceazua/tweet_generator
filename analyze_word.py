@@ -1,36 +1,22 @@
-import sys
-
-file = "One fish two fish red fish blue fish"
-
-
-# List of Lists Histogram Function
-def list_histogram(source_text):
-	source_txt = source_text.lower()
-	# turn the source_text from a string into a list
-	list_sen = source_txt.split()
-	# declare an empty list
-	histogram = []
-
-	# histogram = [['one', 1], ['fish', 4], ['two', 1], ['red', 1], ['blue', 1]]
+def get_words(source_text):
+    words = source_text.lower().split()
+    return words
 
 
 
 # Dictionary Historgram Function
 def dict_histogram(source_text):
+    words = get_words(source_text)
 	# declare an empty dictionary
-	histogram = {}
-	# split the sentence from above into a list
-	list_sen = source_text.lower().split()
+    histogram = {}
 	# loop into the list
-	for word in list_sen:
+    for word in words:
 		# if the word is in the list_sen
-		if word in histogram:
-			# add one into that key
-			histogram[word] += 1
-		else:
-			# if is not create a key with the value of 1
-			histogram[word] = 1
-	return histogram
+        if word in histogram:
+            histogram[word] += 1
+        else:
+            histogram[word] = 1
+    return histogram
 
 
 # 1. What is the least/most frequent word(s)?
@@ -39,4 +25,5 @@ def dict_histogram(source_text):
 
 # run the code
 if __name__ == "__main__":
-	print(dict_histogram(file))
+    file = "One fish two fish red fish blue fish"
+    print(dict_histogram(file))
