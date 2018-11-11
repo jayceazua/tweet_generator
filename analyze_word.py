@@ -1,20 +1,50 @@
+# def get_words():
+#     """ Opens the file and split it into a list """
+#     with open('sherlock_corpus.txt') as dictionary_file:
+#         dictionary_words = dictionary_file.read()
+#     # split('\n') returns the last index of the list with a empty string
+#     # use splitlines() to now allow that.
+#     return dictionary_words.split(' ')
+
 def get_words(source_text):
     words = source_text.lower().split()
     return words
 
 # As a list of lists:
 def list_histogram(source_text):
-    pass
+    histogram = []
+    # loop through the source text list
+    for word in source_text: # O(n)
+    	found_duplicate = False
+    	for item in histogram: # O(n^2)
+    		if word == item[0]:
+    			item[1] += 1
+    			found_duplicate = True
+    			break
+    	if not found_duplicate:
+    		histogram.append([word, 1])
+    return histogram
 
 # As a list of tuples:
 def tup_histogram(source_text):
-    pass
+	temp_histo = [] # this is a temp list for the cause of it being mututable
+	for word in source_text: # O(n) - could be better
+		found_duplicate = False
+		for item in temp_histo: # O(n^2) - could be better
+			if word == item[0]:
+				item[1] += 1
+				found_duplicate = True
+				break
+		if not found_duplicate:
+				temp_histo.append([word, 1])
+	histogram = [tuple(i) for i in temp_histo]
+	return histogram
 
 # As a dictionary of key-value pairs:
 def dic_histogram(source_text):
     """ return a histogram data structure that stores each unique word
     along with the number of times the word appears in the source text. """
-    words = get_words(source_text)
+    words = source_text
     histogram = {}
     for word in words:
         if word in histogram:
@@ -44,9 +74,11 @@ def frequency(word, histogram):
 
 # run the code
 if __name__ == "__main__":
-    file = "One fish two fish red fish blue fish"
+    source_text = "one fish two fish red fish blue fish"
+    file = get_words(source_text)
     histogram = dic_histogram(file)
-    word = "hello"
+    print(histogram)
+    word = "fish"
     print(frequency(word, histogram))
 
 
@@ -69,56 +101,12 @@ def list_of_counts(source_text):
 
 # list of tuples
 def list_of_tuples(source_text):
-	tuple_source_text = source_text.lower().split()
-	# this is a temp list for the cause of it being mututable
-	temp_histo = []
-	# declare another final list that will hold our final results
-	# tuple function for histogram
-	for word in tuple_source_text:
-		found_duplicate = False
-		for item in temp_histo:
-			if word == item[0]:
-				item[1] += 1
-				found_duplicate = True
-				# saving some processing but don't need it
-				break
-		if not found_duplicate:
-				temp_histo.append([word, 1])
-	# similar function from before for the list of lists
-	# I just added a function to convert the individual items in my list into a tuple
-	# and append it in
-	histogram = [tuple(i) for i in temp_histo]
-	return histogram
+
 
 ########## ########## ########## ##########
 # Step 1. Listogram
 def list_of_lists(source_text):
-	# get the param source_text lowercase it and then split it to turn it into a list
-	list_source_text = source_text.lower().split()
-	histogram = []
-	# loop through the source text list
-	for word in list_source_text:
-		# set this variable to False this is my tracker to know if I found a duplicate
-		# tracker variable resets back to false everytime the loop starts again
-		found_duplicate = False
-		# loops through my histogram list
-		for item in histogram:
-			# looping through the histogram list
-			# see if the word == the first index of that initial index [i][0]
-			if word == item[0]:
-				# print('Found a duplicate')
-				# word matches increment it by one
-				item[1] += 1
-				# this sets the found tracker to true
-				found_duplicate = True
-				# breakout of this loop
-				break
-		# if you did not find the duplicate it does not exist in the list
-		if not found_duplicate:
-			# append the word and set the counter to 1
-			histogram.append([word, 1])
-	# return the list we are appending
-	return histogram
+
 
 # Step 2. Listogram
 def frequency_list(word, histogram):
