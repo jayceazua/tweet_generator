@@ -59,17 +59,19 @@ def count_histogram(source_text):
 
 def unique_words(histogram):
     """ returns the total count of unique words in the histogram """
-    counter = 0 # I decided to go with this instead of just using a set or len function to get practice.
-    for word in histogram:
-        counter += 1
-    return counter
+    return len(histogram)
 
-def frequency(word, histogram):
+def frequency_dict(word, histogram):
     """ returns the number of times that word appears in a text. """
-    if word in histogram:
+    if word in histogram: # O(n)
         return histogram[word]
     else:
         return "Error: Word is not in corpus."
+
+def frequency_list_tuple(word, histogram):
+    for item in histogram: # O(n)
+        if item[0] == word:
+            return item[1]
 
 
 # run the code
@@ -77,37 +79,12 @@ if __name__ == "__main__":
     source_text = "one fish two fish red fish blue fish"
     file = get_words(source_text)
     histogram = dic_histogram(file)
-    print(histogram)
     word = "fish"
-    print(frequency(word, histogram))
+    print(unique_words(histogram))
+    print(frequency_dict(word, histogram))
 
 
 """
-#######################################################
-# Histogram - Analyze Word Frequency in Text
-import sys
-import random
-
-file_corpus = "One fish two fish red fish blue fish"
-# open_file = open(file_corpus)
-# read_file = open_file.read()
-
-########## ########## ########## ##########
-# list of counts
-def list_of_counts(source_text):
-	list_source_text = source_text.split()
-	# results have to look like:
-	# counts_list = [(1, ['one', 'two', 'red', 'blue']), (4, ['fish'])]
-
-# list of tuples
-def list_of_tuples(source_text):
-
-
-########## ########## ########## ##########
-# Step 1. Listogram
-def list_of_lists(source_text):
-
-
 # Step 2. Listogram
 def frequency_list(word, histogram):
 	# lower case the word input
