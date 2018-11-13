@@ -1,4 +1,4 @@
-#!/Users/giru/dev/courses/tweet_generator/env/bin/python3
+#!/Users/giru/dev/courses/tweet_generator/env/bin/python3.7
 
 # -*- coding: utf-8 -*-
 import re
