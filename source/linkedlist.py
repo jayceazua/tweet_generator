@@ -19,10 +19,25 @@ class LinkedList(object):
         """Initialize this linked list and append the given items, if any."""
         self.head = None  # First node
         self.tail = None  # Last node
+        # self._length = 0
+        # self.iterator = None
         # Append given items
         if items is not None:
             for item in items:
                 self.append(item)
+
+    # def __iter__(self):
+    #     self.iterator = self.head
+    #     return self
+    #
+    # def next(self):
+    #     if self.iterator is None:
+    #         raise StopIteration
+    #     value = self.iterator.data
+    #     self.iterator = self.iterator.next
+    #
+    # def __len__(self):
+    #     return self._length
 
     def __str__(self):
         """Return a formatted string representation of this linked list."""
