@@ -1,5 +1,13 @@
+# main script, uses other modules to generate sentences
 from flask import Flask
-# import the files needed to generate sentences
+from histogram import Dictogram
+import cleanup
+import tokenize
+import word_count
+import sample
+import sentence
+
+
 
 app = Flask(__name__)
 
@@ -23,3 +31,8 @@ Generate a specific number of words given in a URL query string parameter.
 For example, visiting /?num=10 would generate a set of 10 words.
 """
     return "Something is coming up soon..."
+
+# define some functions that compose the above modules
+
+if __name__ == '__main__':
+    # code to run when file is executed

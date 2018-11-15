@@ -16,6 +16,7 @@ def test_relative():
 class Dictogram(object):
 
 	def __init__(self, corpus=None):
+		# super(Dictogram, self).__init__()
 		self.corpus = corpus
 		self.corpus_list = self.corpus.lower().split()
 		self.histogram = self._dict_histogram()
