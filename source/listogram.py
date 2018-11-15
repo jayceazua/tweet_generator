@@ -20,7 +20,7 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         index = self._index(word) # use the inner help function to find the index
-        if index is not None: 
+        if index is not None:
             value = self[index][1]
             self[index] = (word, value + count)
         else:
@@ -38,8 +38,8 @@ class Listogram(list):
 
     def __contains__(self, word):
         """Return boolean indicating if given word is in this histogram."""
-        title = str(word)
-        if self._index(title) is not None:
+        # title = str(word)
+        if self._index(word) is not None:
             return True
         else:
             return False
