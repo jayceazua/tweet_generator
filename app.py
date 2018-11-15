@@ -36,3 +36,4 @@ For example, visiting /?num=10 would generate a set of 10 words.
 
 if __name__ == '__main__':
     # code to run when file is executed
+    app.run(debug=True, host='0.0.0.0', port=port)
