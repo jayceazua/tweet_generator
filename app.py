@@ -1,8 +1,7 @@
 # main script, uses other modules to generate sentences
 from flask import Flask
-from histogram import Dictogram
 import cleanup
-import tokenize
+import tokenization
 import word_count
 import sample
 import sentence
@@ -26,9 +25,20 @@ def tweet():
 This is advanced stuff: you'll need to use a database. Not for the faint of heart.
 """
 def favorite():
+    return "Something is coming up soon..."
+
+@app.route('/?num={}'.format(input))
+def page_number():
 """
 Generate a specific number of words given in a URL query string parameter.
 For example, visiting /?num=10 would generate a set of 10 words.
+def user_input(): <- use this similar function for the number input into the route
+    " Make sure that the user is putting in an integer
+    user_input = sys.argv[1]
+    if type(user_input) != 'int':
+        return 'Invalid Input; please input a integer.'
+    else:
+        return user_input
 """
     return "Something is coming up soon..."
 
