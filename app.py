@@ -5,6 +5,8 @@ import tokenization
 import word_count
 import sample
 import sentence
+import sys
+import histogram
 
 
 
@@ -12,8 +14,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # return for custom code
-    return "Hello Jasmine!"
+    file_corpus = "One dog two dog red dog blue dog"
+    test = Dictogram(file_corpus)
+    return test.random_word()
 
 @app.route('/tweeter')
 def tweet():
