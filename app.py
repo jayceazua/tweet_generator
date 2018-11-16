@@ -16,7 +16,7 @@ app = Flask(__name__)
 def home():
     file_corpus = "One dog two dog red dog blue dog"
     test = Dictogram(file_corpus)
-    num_of_words = sys.argv[1]
+    num_of_words = 7
     sentence = list()
     for _ in range(num_of_words):
         sentence.append(test.random_word())
