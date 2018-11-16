@@ -6,7 +6,7 @@ import word_count
 import sample
 import sentence
 import sys
-from histogram import Dictogram 
+from histogram import Dictogram
 
 
 
@@ -16,7 +16,13 @@ app = Flask(__name__)
 def home():
     file_corpus = "One dog two dog red dog blue dog"
     test = Dictogram(file_corpus)
-    return test.random_word()
+    num_of_words = sys.argv[1]
+    sentence = list()
+    for _ in range(num_of_words):
+        sentence.append(test.random_word())
+
+    sentence = ' '.join(sentence)
+    return sentence
 
 @app.route('/tweeter')
 def tweet():
