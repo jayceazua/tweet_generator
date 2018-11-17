@@ -79,8 +79,6 @@ class Dictogram(object):
 		This function uses the words from a file
 			and generates a random "sentence"
 		"""
-		# I am getting the total length of the file.
-		len_file = len(list_words)
 		# declare an empty list
 		words_list = []
 		# stores the sentence here
