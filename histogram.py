@@ -15,10 +15,10 @@ def test_relative():
 
 ########## ########## ########## ##########
 
-class Dictogram(object):
+class Dictogram(dict):
 
 	def __init__(self, corpus=None):
-		# super(Dictogram, self).__init__()
+		super(Dictogram, self).__init__()
 		self.corpus = corpus
 		self.corpus_list = self.get_words() # cleanup.py
 		self.histogram = self._dict_histogram()
