@@ -88,7 +88,6 @@ class Dictogram(object):
 		while input_int != 0:
 			words_list.append(self.random_word() + " ")
 			input_int -= 1
-		words_list[0][0].capitalize()
 		return sentence.join(words_list)
 
 
