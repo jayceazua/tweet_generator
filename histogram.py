@@ -3,16 +3,6 @@ import random
 
 
 ########## ########## ########## ##########
-# Testing
-def test_relative():
-	histogram = dict_histogram(corpus)
-	temp_results = []
-	for i in range(0, 10000):
-		temp_results.append(random_word(corpus, histogram))
-	for word in histogram:
-		print('This is the results for ' + word + ':')
-		print(temp_results.count(word))
-
 ########## ########## ########## ##########
 
 class Dictogram(dict):
@@ -67,10 +57,26 @@ class Dictogram(dict):
 	            # return the current key of the loop it is in and break out of it
 				return key
 
+	def first_order_markov_chain(self):
+	    tokens = self.corpus_list
+	    markov_dict = {}
+	    for index, token_key in enumerate(tokens):
+	        if index == len(tokens) - 1:
+	            break
+	        if token_key not in markov_dict:
+	            markov_dict[token_key] = {tokens[index + 1]: 1}
+	        else:
+	            next_token = tokens[index + 1]
+	            if next_token not in markov_dict[token_key]:
+	                markov_dict[token_key][next_token] = 1
+	            else:
+	                markov_dict[token_key][next_token] += 1
+	    return markov_dict
+
 	def get_words(self):
 	    """ Opens the file and split it into a list """
 	    with open(self.corpus) as dictionary_file:
-	        dictionary_words = dictionary_file.read()
+	        dictionary_words = dictionary_file.read() #.lower().replace('\n', ' ')
 	    # cleanup.py might come here.
 	    return dictionary_words.split(' ')
 
@@ -93,4 +99,5 @@ class Dictogram(dict):
 
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
-	print(test.generate_sentence(test.corpus_list))
+	# test_relative('test_corpus.txt')
+	print(test.first_order_markov_chain())
