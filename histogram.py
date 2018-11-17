@@ -1,5 +1,5 @@
 import random
-
+import re
 
 
 ########## ########## ########## ##########
@@ -57,7 +57,7 @@ class Dictogram(dict):
 	            # return the current key of the loop it is in and break out of it
 				return key
 
-	def first_order_markov_chain(self):
+	def markov_dict(self):
 	    tokens = self.corpus_list
 	    markov_dict = {}
 	    for index, token_key in enumerate(tokens):
@@ -73,6 +73,10 @@ class Dictogram(dict):
 	                markov_dict[token_key][next_token] += 1
 	    return markov_dict
 
+
+	def tweet_generator(self, markov_dict):
+		pass
+
 	def get_words(self):
 	    """ Opens the file and split it into a list """
 	    with open(self.corpus) as dictionary_file:
@@ -80,7 +84,8 @@ class Dictogram(dict):
 	    # cleanup.py might come here.
 	    return dictionary_words.split(' ')
 
-	def generate_sentence(self, list_words):
+
+	def generate_sentence(self, list_words): # will be switch for markov sentence
 		"""
 		This function uses the words from a file
 			and generates a random "sentence"
@@ -99,5 +104,4 @@ class Dictogram(dict):
 
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
-	# test_relative('test_corpus.txt')
-	print(test.first_order_markov_chain())
+	print(test.markov_dict())
