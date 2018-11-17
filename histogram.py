@@ -57,12 +57,10 @@ class Dictogram(dict):
 	            # return the current key of the loop it is in and break out of it
 				return key
 
-	def markov_dict(self):
-	    tokens = self.corpus_list
+	def markov_dict(self, tokens):
 	    markov_dict = {}
 	    for index, token_key in enumerate(tokens):
-	        if index == len(tokens) - 1:
-	            break
+	        if index == len(tokens) - 1: break
 	        if token_key not in markov_dict:
 	            markov_dict[token_key] = {tokens[index + 1]: 1}
 	        else:
@@ -77,15 +75,15 @@ class Dictogram(dict):
 	def tweet_generator(self, markov_dict):
 		pass
 
-	def get_words(self):
+	def get_words(self): # this is where I clean the corpus
 	    """ Opens the file and split it into a list """
 	    with open(self.corpus) as dictionary_file:
-	        dictionary_words = dictionary_file.read() #.lower().replace('\n', ' ')
+	        dictionary_words = dictionary_file.read().replace("\n", "")
 	    # cleanup.py might come here.
 	    return dictionary_words.split(' ')
 
 
-	def generate_sentence(self, list_words): # will be switch for markov sentence
+	def generate_sentence(self, list_words): # generates sentences but no markov
 		"""
 		This function uses the words from a file
 			and generates a random "sentence"
@@ -104,4 +102,31 @@ class Dictogram(dict):
 
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
-	print(test.markov_dict())
+	# test.tweet_generator()
+	print('------------------------------')
+	# print(test.markov_dict(test.corpus_list))
+
+"""{
+'A': {'man,': 1, 'dog,': 1},
+'man,': {'a': 1},
+'a': {'plan,': 1, 'canal:': 1, 'panic': 1, 'pagoda!\n': 1},
+'plan,': {'a': 1},
+'canal:': {'Panama!': 1},
+'Panama!': {'A': 1},
+'dog,': {'a': 1},
+'panic': {'in': 1},
+'in': {'a': 1}
+}
+
+{
+'A': 2,
+'man,': 1,
+'a': 4,
+'plan,': 1,
+'canal:': 1,
+'Panama!': 1,
+'dog,': 1,
+'panic': 1,
+'in': 1,
+'pagoda!\n': 1
+} """
