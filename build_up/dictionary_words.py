@@ -24,7 +24,7 @@ def random_words_arrange(input_int, list_words):
 		and generates a random "sentence"
 	"""
 	# I am getting the total length of the file.
-	len_file = len(get_words())
+	len_file = len(list_words)
 	# declare an empty list
 	words_list = []
 	# stores the sentence here
@@ -44,6 +44,7 @@ def random_words_arrange(input_int, list_words):
 def main():
     list_words = get_words()
     input_int = int(sys.argv[1])
+    print(list_words)
     print(random_words_arrange(input_int, list_words))
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 import random
 
+
+
 ########## ########## ########## ##########
 # Testing
 def test_relative():
@@ -18,9 +20,9 @@ class Dictogram(object):
 	def __init__(self, corpus=None):
 		# super(Dictogram, self).__init__()
 		self.corpus = corpus
-		self.corpus_list = self.corpus.lower().split()
+		self.corpus_list = self.get_words() # cleanup.py
 		self.histogram = self._dict_histogram()
-		self.tokens = len(self.corpus_list)
+		self.tokens = len(self.corpus_list) # word_count.py
 
 	def _dict_histogram(self):
 		"""
@@ -65,11 +67,32 @@ class Dictogram(object):
 	            # return the current key of the loop it is in and break out of it
 				return key
 
+	def get_words(self):
+	    """ Opens the file and split it into a list """
+	    with open(self.corpus) as dictionary_file:
+	        dictionary_words = dictionary_file.read()
+	    # cleanup.py might come here.
+	    return dictionary_words.split(' ')
+
+	def generate_sentence(self, list_words):
+		"""
+		This function uses the words from a file
+			and generates a random "sentence"
+		"""
+		# I am getting the total length of the file.
+		len_file = len(list_words)
+		# declare an empty list
+		words_list = []
+		# stores the sentence here
+		sentence = ""
+		input_int = random.randint(5, 10)
+			# the condition is when
+		while input_int != 0:
+			words_list.append(self.random_word() + " ")
+			input_int -= 1
+		return sentence.join(words_list)
 
 
 if __name__ == "__main__":
-    file_corpus = "One dog two dog red dog blue dog"
-    test = Dictogram(file_corpus)
-    # print(test.histogram)
-    # print(test.tokens)
-    print(test.random_word())
+	test = Dictogram('test_corpus.txt')
+	print(test.generate_sentence(test.corpus_list))

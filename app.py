@@ -14,15 +14,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    file_corpus = "One dog two dog red dog blue dog"
-    test = Dictogram(file_corpus)
-    num_of_words = 7
-    sentence = list()
-    for _ in range(num_of_words):
-        sentence.append(test.random_word())
-
-    sentence = ' '.join(sentence)
-    return sentence
+    file_corpus = "One dog two dog red dog blue dog" # custom corpus
+    test = Dictogram('test_corpus.txt')
+    return test.generate_sentence(test.corpus_list)
 
 @app.route('/tweeter')
 def tweet():
