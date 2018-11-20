@@ -104,7 +104,7 @@ if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
 	# test.tweet_generator()
 	print('------------------------------')
-	# print(test.markov_dict(test.corpus_list))
+	print(test.markov_dict(test.corpus_list))
 
 """{
 'A': {'man,': 1, 'dog,': 1},
