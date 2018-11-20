@@ -40,8 +40,7 @@ class HashTable(object):
         return hash(key) % len(self.buckets)
 
     def keys(self):
-        """Return a list of all keys in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        """Return a list of all keys in this hash table."""
         # Collect all keys in each bucket
         all_keys = []
         for bucket in self.buckets:
