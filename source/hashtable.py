@@ -59,8 +59,10 @@ class HashTable(object):
         return all_values
 
     def items(self):
-        """Return a list of all items (key-value pairs) in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        """
+            Return a list of all items (key-value pairs) in this hash table.
+            Running time: O(???) Why and under what conditions?
+        """
         # Collect all pairs of key-value entries in each bucket
         all_items = []
         for bucket in self.buckets:
@@ -75,19 +77,21 @@ class HashTable(object):
 
         return sum_of_entries
 
-    def contains(self, key):
-        """Return True if this hash table contains the given key, or False.
-        TODO: Running time: O(???) Why and under what conditions?"""
-
+    def contains(self, key): # redo this shit...
+        """
+            Return True if this hash table contains the given key, or False.
+            Runtime: O(b * l)
+        """
         for a_bucket in self.buckets:
             if a_bucket.find(lambda entry: entry[0] == key):
                 return True
-
         return False
 
     def get(self, key):
-        """Return the value associated with the given key, or raise KeyError.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        """
+            Return the value associated with the given key, or raise KeyError.
+            Runtime: O(n)
+        """
         index = self._bucket_index(key)
         bucket = self.buckets[index]
 
@@ -154,7 +158,7 @@ def test_hash_table():
         print('length: {}'.format(ht.length()))
 
 
-        
+
 
 if __name__ == '__main__':
     test_hash_table()
