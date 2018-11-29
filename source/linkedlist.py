@@ -98,15 +98,24 @@ class LinkedList(object):
 		return items  # O(1) time to return list
 
 	def is_empty(self):
-		"""Return a boolean indicating whether this linked list is empty."""
+		"""
+			Return a boolean indicating whether this linked list is empty.
+			Runtime: O(1)
+		"""
 		return self.head is None
 
 	def length(self):
-		"""Return the length of this linked list by traversing its nodes"""
+		"""
+			Return the length of this linked list by traversing its nodes
+			Runtime: O(1)
+		"""
 		return self._length
 
 	def append(self, item):
-		"""Insert the given item at the tail of this linked list."""
+		"""
+			Insert the given item at the tail of this linked list.
+			Runtime: O(1)
+		"""
 		node = Node(item)
 		if self.head is None:
 			self.head = node
@@ -118,7 +127,10 @@ class LinkedList(object):
 		self._length += 1
 
 	def prepend(self, item):
-		"""Insert the given item at the head of this linked list."""
+		"""
+			Insert the given item at the head of this linked list.
+			Runtime: O(1)
+		"""
 		node = Node(item)
 		node.next = self.head
 		self.head = node
@@ -128,7 +140,11 @@ class LinkedList(object):
 		self._length += 1
 
 	def find(self, quality):
-		"""Return an item from this linked list satisfying the given quality."""
+		"""
+			Return an item from this linked list satisfying the given quality.
+			Best case running time: O(1) If it is empty or in the beginning
+			Worst case running time: O(n)  
+		"""
 		iterator = self.head
 		is_found = False
 
@@ -141,10 +157,12 @@ class LinkedList(object):
 		return iterator.data if is_found else None
 
 	def delete(self, item):
-		"""Delete the given item from this linked list, or raise ValueError.
-        ll = LinkedList(['A', 'B', 'C', 'D', 'E'])
-		TODO: Best case running time: O(???) Why and under what conditions?
-		TODO: Worst case running time: O(???) Why and under what conditions?"""
+		"""
+			Delete the given item from this linked list, or raise ValueError.
+        	ll = LinkedList(['A', 'B', 'C', 'D', 'E'])
+			TODO: Best case running time: O(1) If it is empty or in the beginning
+			TODO: Worst case running time: O(n)
+		"""
 
 		prev_pointer = None
 		current_pointer = self.head
@@ -161,7 +179,6 @@ class LinkedList(object):
 				else:
 					prev_pointer.next = current_pointer.next
 				current_pointer.next = None
-
 				break
 			else:
 				prev_pointer = current_pointer
