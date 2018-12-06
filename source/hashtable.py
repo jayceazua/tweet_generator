@@ -61,7 +61,7 @@ class HashTable(object):
     def items(self):
         """
             Return a list of all items (key-value pairs) in this hash table.
-            Running time: O(???) Why and under what conditions?
+            Running time: O(n) Why and under what conditions?
         """
         # Collect all pairs of key-value entries in each bucket
         all_items = []
@@ -80,7 +80,7 @@ class HashTable(object):
     def contains(self, key): # redo this shit...
         """
             Return True if this hash table contains the given key, or False.
-            Runtime: O(b * l)
+            Runtime: O(n)
         """
         for a_bucket in self.buckets:
             if a_bucket.find(lambda entry: entry[0] == key):

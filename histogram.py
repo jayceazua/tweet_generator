@@ -73,6 +73,11 @@ class Dictogram(dict):
 
 
 	def tweet_generator(self, markov_dict):
+		# empty list or sentenve varliable to push
+		
+		# TODO: random walk function <-- 1. random choice from the markov_dict (random key)
+		# pull a random word within the key "random sample of the values"
+		# TODO:
 		pass
 
 	def get_words(self): # this is where I clean the corpus
@@ -103,7 +108,6 @@ class Dictogram(dict):
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
 	# test.tweet_generator()
-	print('------------------------------')
 	print(test.markov_dict(test.corpus_list))
 
 """{
