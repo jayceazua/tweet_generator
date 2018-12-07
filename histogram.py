@@ -74,8 +74,9 @@ class Dictogram(dict):
 
 	def tweet_generator(self, markov_dict):
 		# empty list or sentenve varliable to push
-		
+		temp_markov_sentence = []
 		# TODO: random walk function <-- 1. random choice from the markov_dict (random key)
+		
 		# pull a random word within the key "random sample of the values"
 		# TODO:
 		pass
@@ -121,16 +122,4 @@ if __name__ == "__main__":
 'panic': {'in': 1},
 'in': {'a': 1}
 }
-
-{
-'A': 2,
-'man,': 1,
-'a': 4,
-'plan,': 1,
-'canal:': 1,
-'Panama!': 1,
-'dog,': 1,
-'panic': 1,
-'in': 1,
-'pagoda!\n': 1
-} """
+ """
