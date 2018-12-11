@@ -99,7 +99,6 @@ class Dictogram(dict):
 		# empty list or sentenve varliable to push
 		temp_markov_sentence = []
 		# TODO: random walk function <-- 1. random choice from the markov_dict (random key)
-
 		# pull a random word within the key "random sample of the values"
 		# TODO:
 		pass
@@ -107,7 +106,7 @@ class Dictogram(dict):
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
 	# test.tweet_generator()
-	print(test.markov_dict(test.corpus_list))
+	print(test.tweet_generator(test.markov_dict()))
 
 """{
 'A': {'man,': 1, 'dog,': 1},
