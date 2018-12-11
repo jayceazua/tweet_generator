@@ -57,30 +57,6 @@ class Dictogram(dict):
 	            # return the current key of the loop it is in and break out of it
 				return key
 
-	def markov_dict(self, tokens):
-	    markov_dict = {}
-	    for index, token_key in enumerate(tokens):
-	        if index == len(tokens) - 1: break
-	        if token_key not in markov_dict:
-	            markov_dict[token_key] = {tokens[index + 1]: 1}
-	        else:
-	            next_token = tokens[index + 1]
-	            if next_token not in markov_dict[token_key]:
-	                markov_dict[token_key][next_token] = 1
-	            else:
-	                markov_dict[token_key][next_token] += 1
-	    return markov_dict
-
-
-	def tweet_generator(self, markov_dict):
-		# empty list or sentenve varliable to push
-		temp_markov_sentence = []
-		# TODO: random walk function <-- 1. random choice from the markov_dict (random key)
-		
-		# pull a random word within the key "random sample of the values"
-		# TODO:
-		pass
-
 	def get_words(self): # this is where I clean the corpus
 	    """ Opens the file and split it into a list """
 	    with open(self.corpus) as dictionary_file:
@@ -105,6 +81,28 @@ class Dictogram(dict):
 			input_int -= 1
 		return sentence.join(words_list)
 
+	def markov_dict(self, tokens):
+	    markov_dict = {}
+	    for index, token_key in enumerate(tokens):
+	        if index == len(tokens) - 1: break
+	        if token_key not in markov_dict:
+	            markov_dict[token_key] = {tokens[index + 1]: 1}
+	        else:
+	            next_token = tokens[index + 1]
+	            if next_token not in markov_dict[token_key]:
+	                markov_dict[token_key][next_token] = 1
+	            else:
+	                markov_dict[token_key][next_token] += 1
+	    return markov_dict
+
+	def tweet_generator(self, markov_dict):
+		# empty list or sentenve varliable to push
+		temp_markov_sentence = []
+		# TODO: random walk function <-- 1. random choice from the markov_dict (random key)
+
+		# pull a random word within the key "random sample of the values"
+		# TODO:
+		pass
 
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
