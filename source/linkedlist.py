@@ -143,7 +143,7 @@ class LinkedList(object):
 		"""
 			Return an item from this linked list satisfying the given quality.
 			Best case running time: O(1) If it is empty or in the beginning
-			Worst case running time: O(n)  
+			Worst case running time: O(n)
 		"""
 		iterator = self.head
 		is_found = False

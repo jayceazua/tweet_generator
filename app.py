@@ -7,6 +7,7 @@ import sample
 import sentence
 import sys
 from histogram import Dictogram
+from markov_chain_first import get_long_words, first_order_markov, tweet_generator
 
 
 
@@ -14,9 +15,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    file_corpus = "One dog two dog red dog blue dog" # custom corpus
-    test = Dictogram('test_corpus.txt')
-    return test.generate_sentence(test.corpus_list)
+    clean_data = get_long_words()
+    markov_chn_dict = first_order_markov(clean_data)
+
+    return tweet_generator(30, markov_chn_dict)
 
 @app.route('/tweeter')
 def tweet():
