@@ -27,7 +27,8 @@ def generate_random_start(model):
         while seed_word == 'END':
             seed_word = model['END'].return_weighted_random_word()
         return seed_word
-    return random.choice(model.keys())
+    # list
+    return random.choice(list(model.keys()))
 
 
 def generate_random_sentence(length, markov_model):
@@ -40,7 +41,7 @@ def generate_random_sentence(length, markov_model):
         sentence.append(current_word)
     sentence[0] = sentence[0].capitalize()
     return ' '.join(sentence) + '.'
-    return sentence
+    # return sentence
 
 
 def make_higher_order_markov_model(order, data):
