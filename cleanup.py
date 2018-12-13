@@ -1,28 +1,40 @@
-# module for cleaning up source text
-from string import punctuation
+import sys
+import re
 
 
-def clean_up_words_from_file(file_name):
-    """TODO: make list of words from text, input file name, and returns list of words."""
-    new_word_list = []
-    with open(file_name, 'r') as f:
-        word_list = f.read().split()
-    for word in word_list:
-        if "--" in word:
-            word_list.remove(word)
-            word = word.split('--')
-            for a_word in word:
-                word_list.append(a_word)
-        elif "-" in word:
-            word_list.remove(word)
-            word = word.split('-')
-            for a_word in word:
-                word_list.append(a_word)
-    for word in word_list:
-        clean_word = ''
-        for c in word:
-            if c not in punctuation:
-                clean_word += c
-        if clean_word.isalpha() is True and "http" not in clean_word:
-            new_word_list.append(clean_word.lower())
-    return new_word_list
+def clean_file(filename):
+    data_file = open(filename, 'r')
+    words_list = data_file.read().lower()
+    words_list = remove_punctuation(words_list)
+    result_list = []
+
+    matches = re.findall("[A-z]+\'?[A-z]*|\$[0-9]*", words_list)
+    for match in matches:
+        result_list.append(match)
+    return ['END'] + result_list
+
+
+def remove_punctuation(text):
+    no_punc_text = re.sub('[,()]', '', text)
+    # Handles all that are not endlines
+    no_punc_text = re.sub('\. +', ' END ', no_punc_text)
+    # This does the same as above but also gets new lines and therefore
+    # we give an extra space!
+    no_punc_text = re.sub('\.\s+', ' END ', no_punc_text)
+    no_punc_text = re.sub('--', ' ', no_punc_text)
+    no_punc_text = re.sub(':', ' ', no_punc_text)
+
+    return no_punc_text
+
+
+def main():
+    user_argument_count = len(sys.argv)
+    if user_argument_count == 1:
+        print 'Error: textfile not provided'
+    else:
+        data_file = open(sys.argv[1], 'r')
+        words_list = data_file.read().lower()
+
+        matches = re.findall("[A-z]+\'?[A-z]*|\$[0-9]*", words_list)
+        for match in matches:
+            print match
