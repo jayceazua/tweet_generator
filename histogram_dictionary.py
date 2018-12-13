@@ -39,25 +39,9 @@ class Histogram():
 
 
 def main():
-    #sample string
-    # str_words = 'one fish two fish three fish four fish'
+    pass 
 
-    #accessing the list of words as string
-    helper_dictionary_words = get_long_words()
-    # helper_dictionary_words = get_words()
-    # helper_dictionary_words = get_short_words()
 
-    #calling function histogram with sample string
-    histogram = Histogram(get_long_words())
-    # histogram = Histogram(helper_dictionary_words)
-    # histogram = Histogram(get_short_words())
-
-    #calling function frequency with histogram output as dict argument
-    histogram_freq = histogram.get_frequency('Alice')
-
-    print('Alice tokens: ', histogram_freq)
-    print('Total amount of types: ', histogram.get_unique_words())
-    print('Alice should be: ', histogram.get_frequency('Alice') / sum(histogram.histogram.values()))
 
 
 if __name__ == "__main__":
