@@ -40,7 +40,7 @@ class Dictogram(dict):
 		return frequency / self.tokens
 
 	# Step 4. Dictogram
-	def random_word(self):
+	def random_word(self, histogram):
 		"""
 		Stochastic Sampling for dictionaries.
 		"""
@@ -49,7 +49,7 @@ class Dictogram(dict):
 	    # this variable is used to update as we loop
 		running_total = 0.0
 	    # loop through the dictionary histogram
-		for key, value in self.histogram.items():
+		for key, value in histogram.items():
 	        # runs the probabilities_frequency function and adds it to the running_total variable
 			running_total += self.probabilities_frequency(key)
 	        # if the running_total variable is equal to our greater than the random_num
@@ -105,8 +105,9 @@ class Dictogram(dict):
 
 if __name__ == "__main__":
 	test = Dictogram('test_corpus.txt')
-	# test.tweet_generator()
-	print(test.tweet_generator(test.markov_dict()))
+	# print(test.random_word(test.histogram))
+	markov = test.markov_dict(test.corpus_list)
+	print(test.random_word(markov['A']))
 
 """{
 'A': {'man,': 1, 'dog,': 1},
@@ -119,4 +120,7 @@ if __name__ == "__main__":
 'panic': {'in': 1},
 'in': {'a': 1}
 }
+
+2. markov[state_from_before]
+
  """
