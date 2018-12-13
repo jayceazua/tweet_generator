@@ -18,7 +18,7 @@ def home():
     clean_data = get_long_words()
     markov_chn_dict = first_order_markov(clean_data)
 
-    return tweet_generator(30, markov_chn_dict)
+    return tweet_generator(50, markov_chn_dict)
 
 @app.route('/tweeter')
 def tweet():
