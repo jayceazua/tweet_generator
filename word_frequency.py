@@ -99,23 +99,6 @@ def histogram(file_name):
     return histogram
 
 
-# *************** DICTIONARY TESTS *************** #
-def test_weighted_random_word(histogram, times):
-    results = dict()
-    for i in range(0, times):
-        result = return_weighted_random_word(histogram)
-        if result in results:
-            results[result] += 1
-        else:
-            results[result] = 1
-    # Organize results to display most common first
-    results_tuple = results.items()
-    # Slower version according to SO
-    # sorted_results = sorted(results_tuple, key=lambda x: x[1], reverse=True)
-    sorted_results = sorted(results_tuple, key=itemgetter(1), reverse=True)
-    print sorted_results
-
-
 # *************** HELPERS TUPLE *************** #
 def get_token_count_tuple(histogram):
     sum = 0
@@ -137,35 +120,12 @@ def weighted_random_word_tuple(histogram):
             return histogram[i][0]
 
 
-# *************** TUPLE HISTOGRAM *************** #
-def tuple_histogram(file_name):
-    dict_historgram = histogram(file_name)
-    tuple_histogram = dict_historgram.items()
-    return tuple_histogram
-
 
 # *************** SORTED TUPLE HISTOGRAM *************** #
 def tuple_histogram_sorted(file_name):
     tup_histogram = tuple_histogram(file_name)
     return sorted(tup_histogram, key=itemgetter(1), reverse=True)
 
-
-# *************** TUPLE TESTS *************** #
-def test_weighted_random_word_tuple(histogram, times):
-    results = dict()
-    for i in range(0, times):
-        result = weighted_random_word_tuple(histogram)
-        if result in results:
-            results[result] += 1
-        else:
-            results[result] = 1
-    # Organize results to display most common first
-    results_tuple = results.items()
-    # Slower version according to SO
-    # sorted_results = sorted(results_tuple, key=lambda x: x[1], reverse=True)
-    sorted_results = sorted(results_tuple, key=itemgetter(1), reverse=True)
-
-    print sorted_results
 
 
 # *************** BINARY TUPLE HISTOGRAM HELPERS *************** #
@@ -200,24 +160,6 @@ def binary_search_random_word_tuple(histogram):
     return word
 
 
-# *************** BINARY TUPLE HISTOGRAM TESTS *************** #
-def test_binary_search(histogram, times):
-    results = dict()
-    for i in range(0, times):
-        result = binary_search_random_word_tuple(histogram)
-        if result in results:
-            results[result] += 1
-        else:
-            results[result] = 1
-    # Organize results to display most common first
-    results_tuple = results.items()
-    # Slower version according to SO
-    # sorted_results = sorted(results_tuple, key=lambda x: x[1], reverse=True)
-    sorted_results = sorted(results_tuple, key=itemgetter(1), reverse=True)
-
-    print sorted_results
-
-
 # *************** BINARY HISTOGRAM *************** #
 def binary_histogram(file_name):
     sorted_historgram = tuple_histogram_sorted(file_name)
@@ -243,23 +185,8 @@ def random_sentence(data_structure):
     return ' '.join(sentence) + '.'
 
 
-
-
 def main():
-    file_name = 'small_text_sample.txt'
-    histogram_data = binary_histogram(file_name)
-
-    random_sentence()
-    random_actor2 = random_actor()
-    print('Yo random Actor: ', random_actor2)
-
-    random_actor_cleaned = random_actor2.replace(' ', '')
-    random_actor_cleaned = random_actor_cleaned.replace('\'', '')
-    print('random actor cleaned ', random_actor_cleaned)
-    print "images/"+random_actor_cleaned+".png"
-
-    test_binary_search(histogram_data, 10000)
-
+    pass
 
 if __name__ == '__main__':
     main()
