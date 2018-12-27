@@ -33,7 +33,7 @@ def fibonacci(n):
 	#  compute the nth term
 	if n == 1:
 		value = 1
-	elif n == 2:
+	elif n <= 2:
 		value = 1
 	elif n > 2:
 		value = fibonacci(n - 1) + fibonacci(n - 2)

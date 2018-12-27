@@ -8,15 +8,15 @@ Tweet Generator - generates sentences that sound realistic, but not always sensi
 ## Technologies
 Python 3.7, Flask, Gunicorn, HTML, CSS, JS, JQuery
 ## Milestones
-- [ ] **1. Rearranging words from terminal output.**
-- [ ] **2. Random Dictionary Words**
-- [ ] **3. Analyze Word Frequency in Text**
-- [ ] **4. Stochastic Sampling**
-- [ ] **5. Flask Web App**
-- [ ] **6. Application Architecture**
-- [ ] **7. Generating Sentences**
-- [ ] **8. Linked List**
-- [ ] **9. Hash Table**
+- [x] **01. Rearranging words from terminal output.**
+- [x] **02. Random Dictionary Words**
+- [ ] **03. Analyze Word Frequency-in-Text**
+- [ ] **04. Stochastic Sampling**
+- [ ] **05. Flask Web App**
+- [ ] **06. Application Architecture**
+- [ ] **07. Generating Sentences**
+- [ ] **08. Linked List**
+- [ ] **09. Hash Table**
 - [ ] **10. Performance Analysis**
 - [ ] **11. Markov Chains Revisited**
 - [ ] **12. Creating a Corpus**

@@ -1,8 +1,5 @@
 import random
 
-
-
-
 def random_python_quote(quotes):
     rand_index =  random.randint(0, len(quotes) - 1)
     return quotes[rand_index]
