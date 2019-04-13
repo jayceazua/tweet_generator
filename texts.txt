@@ -1,0 +1,5 @@
+sources/frankenstein.txt
+sources/modestproposal.txt
+sources/prideprejudice.txt
+sources/secretgarden.txt
+sources/huckleberryfinn.txt
