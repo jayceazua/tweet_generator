@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Saved Quotes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assets "scss_all" %}
+  <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+  {% endassets %}
+</head>
+
+<body>
+  <button onclick="location.href=`/sentence/{{return_to}}`"> Home </button>
+  <hr>
+
+  <div id="sentence-array">
+    {{sentences}}
+  </div>
+
+  <script src="../static/savedScripts.js"></script>
+</body>
+
+</html>
