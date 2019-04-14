@@ -30,4 +30,5 @@ Python 3.7, Flask, Gunicorn, HTML, CSS, JS, JQuery
 
 
 Will change to Futurama Theme
-IT IS ALIVE: https://eminem-markov-chain.herokuapp.com/
+IT IS ALIVE: https://jj-tweeter.herokuapp.com
+
