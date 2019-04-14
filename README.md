@@ -10,19 +10,19 @@ Python 3.7, Flask, Gunicorn, HTML, CSS, JS, JQuery
 ## Milestones
 - [x] **01. Rearranging words from terminal output.**
 - [x] **02. Random Dictionary Words**
-- [ ] **03. Analyze Word Frequency-in-Text**
-- [ ] **04. Stochastic Sampling**
-- [ ] **05. Flask Web App**
-- [ ] **06. Application Architecture**
-- [ ] **07. Generating Sentences**
-- [ ] **08. Linked List**
-- [ ] **09. Hash Table**
-- [ ] **10. Performance Analysis**
-- [ ] **11. Markov Chains Revisited**
-- [ ] **12. Creating a Corpus**
-- [ ] **13. Parsing Text and Clean Up**  
-- [ ] **14. Tokenization**
-- [ ] **15. Time to Tweet**
+- [x] **03. Analyze Word Frequency-in-Text**
+- [x] **04. Stochastic Sampling**
+- [x] **05. Flask Web App**
+- [x] **06. Application Architecture**
+- [x] **07. Generating Sentences**
+- [x] **08. Linked List**
+- [x] **09. Hash Table**
+- [x] **10. Performance Analysis**
+- [x] **11. Markov Chains Revisited**
+- [x] **12. Creating a Corpus**
+- [x] **13. Parsing Text and Clean Up**  
+- [x] **14. Tokenization**
+- [x] **15. Time to Tweet**
 
 
 #### Notes:

@@ -1,8 +1,8 @@
 import string, os, re
 
-import nltk, pprint
-from nltk.corpus import PlaintextCorpusReader
-nltk.download('punkt')
+# import nltk, pprint
+# from nltk.corpus import PlaintextCorpusReader
+# nltk.download('punkt')
 
 def cleanse(text):
     '''Cleans and tokenizes input text'''
